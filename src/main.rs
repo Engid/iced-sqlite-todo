@@ -2,6 +2,7 @@
 
 mod app;
 mod db;
+mod piano_grid;
 
 use app::TodoApp;
 
@@ -18,7 +19,7 @@ fn main() -> iced::Result {
     iced::application(TodoApp::new, TodoApp::update, TodoApp::view)
     .title(app_title)
         .theme(TodoApp::theme)
-        .window_size((480.0, 640.0))
+    .window_size((960.0, 680.0))
         .run()
 }
 

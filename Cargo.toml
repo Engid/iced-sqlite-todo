@@ -8,11 +8,12 @@ rusqlite = { version = "0.39", features = ["bundled"] }
 
 [dependencies.iced]
 version = "0.14"
+features = ["canvas"]
 
 # On wasm32 we need the webgl renderer (wgpu's default WebGPU backend
 # isn't universally available yet) and sqlite-wasm-rs for OPFS.
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-iced = { version = "0.14", features = ["webgl"] }
+iced = { version = "0.14", features = ["webgl", "canvas"] }
 sqlite-wasm-rs = "0.5"
 wasm-bindgen-futures = "0.4"
 web-sys = { version = "0.3", features = ["console"] }
